@@ -5,7 +5,7 @@ import { useEffect, useCallback, useRef } from "react";
 // Replace with real values from MEGA Admin after site registration
 const CONFIG = {
   CUSTOMER_ID: "11cf1e78-1aa5-4b92-9caf-adacc5bf2723",
-  SITE_ID: "PLACEHOLDER",
+  SITE_ID: "6ccdeb37-91ea-4358-b815-e5d372c9fbe9",
   SOURCE_PROVIDER: "customer-landing-revup",
   ENDPOINT: "https://analytics.gomega.ai/submission/submit",
 };

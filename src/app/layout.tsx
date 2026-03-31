@@ -20,13 +20,13 @@ export default function RootLayout({
         {/* MegaTag tracking */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.MEGA_TAG_CONFIG={siteKey:"sk_PLACEHOLDER"};window.API_ENDPOINT="https://optimizer.gomega.ai";window.TRACKING_API_ENDPOINT="https://events-api.gomega.ai";`,
+            __html: `window.MEGA_TAG_CONFIG={siteKey:"sk_mnewpwjx_qcvc38g7v9",siteId:"6ccdeb37-91ea-4358-b815-e5d372c9fbe9"};window.API_ENDPOINT="https://optimizer.gomega.ai";window.TRACKING_API_ENDPOINT="https://events-api.gomega.ai";`,
           }}
         />
-        <meta name="mega-site-id" content="PLACEHOLDER_SITE_ID" />
+        <meta name="mega-site-id" content="6ccdeb37-91ea-4358-b815-e5d372c9fbe9" />
         <script
           id="optimizer-script"
-          data-site-id="PLACEHOLDER_SITE_ID"
+          data-site-id="6ccdeb37-91ea-4358-b815-e5d372c9fbe9"
           src="https://cdn.gomega.ai/scripts/optimizer.min.js"
           async
         />
