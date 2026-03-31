@@ -193,10 +193,10 @@ export default function Home() {
                   </a>
                 </div>
                 {/* Hero image */}
-                <div className="mt-10 hidden lg:block bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div className="mt-10 hidden lg:block bg-white rounded-2xl shadow-lg overflow-hidden max-w-md mx-auto">
                   <Image
                     src="https://revup-team.com/wp-content/uploads/2025/05/people-00.png"
-                    alt="Real estate professionals using RevUp" width={500} height={370} className="w-full max-w-md" unoptimized
+                    alt="Real estate professionals using RevUp" width={500} height={370} className="w-full" unoptimized
                   />
                 </div>
               </div>
@@ -308,15 +308,15 @@ export default function Home() {
                 </p>
               </div>
             </Reveal>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 items-stretch">
               {STEPS.map((step, i) => (
                 <Reveal key={step.title} delay={i * 150}>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10 hover:border-accent/50 transition-colors">
-                    <div className="w-16 h-16 rounded-full bg-accent mx-auto flex items-center justify-center text-white text-2xl font-heading mb-6 shadow-lg">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10 hover:border-accent/50 transition-colors h-full flex flex-col">
+                    <div className="w-16 h-16 rounded-full bg-accent mx-auto flex items-center justify-center text-white text-2xl font-heading mb-6 shadow-lg shrink-0">
                       {step.step}
                     </div>
-                    <h3 className="text-xl font-heading mb-3">{step.title}</h3>
-                    <p className="text-white/70">{step.description}</p>
+                    <h3 className="text-xl font-heading mb-3 shrink-0">{step.title}</h3>
+                    <p className="text-white/70 grow">{step.description}</p>
                   </div>
                 </Reveal>
               ))}
