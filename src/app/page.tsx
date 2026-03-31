@@ -193,10 +193,10 @@ export default function Home() {
                   </a>
                 </div>
                 {/* Hero image */}
-                <div className="mt-10 hidden lg:block">
+                <div className="mt-10 hidden lg:block bg-white rounded-2xl shadow-lg overflow-hidden">
                   <Image
                     src="https://revup-team.com/wp-content/uploads/2025/05/people-00.png"
-                    alt="Real estate professionals using RevUp" width={500} height={370} className="rounded-2xl w-full max-w-md" unoptimized
+                    alt="Real estate professionals using RevUp" width={500} height={370} className="w-full max-w-md" unoptimized
                   />
                 </div>
               </div>
@@ -426,11 +426,13 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <Image
-                    src="https://revup-team.com/wp-content/uploads/2025/05/people-00.png"
-                    alt="RevUp team" width={500} height={370}
-                    className="rounded-2xl w-full hidden lg:block" unoptimized
-                  />
+                  <div className="rounded-2xl overflow-hidden bg-white shadow-lg hidden lg:block">
+                    <Image
+                      src="https://revup-team.com/wp-content/uploads/2025/05/people-00.png"
+                      alt="RevUp team" width={500} height={370}
+                      className="w-full" unoptimized
+                    />
+                  </div>
                 </div>
               </Reveal>
               {/* Right side - form */}
