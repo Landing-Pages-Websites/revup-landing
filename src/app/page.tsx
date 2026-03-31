@@ -36,31 +36,22 @@ const GOVERNMENT_LOGOS = [
 
 const BENEFITS = [
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/icon-repair-purple.png",
+    iconWhite: "https://revup-team.com/wp-content/uploads/2025/05/icon-repair-white.png",
     title: "No Additional Overhead Costs",
-    description: "RevUp costs you absolutely nothing! Our member support services are exemplary and we cover 100% of cost for these services.",
+    description: "RevUp costs you absolutely nothing! Our member support services are exemplary and we cover 100% of cost for these services. You keep your current setup and add a powerful new revenue stream with zero investment.",
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/icon-timer-purple.png",
+    iconWhite: "https://revup-team.com/wp-content/uploads/2025/05/icon-timer-white.png",
     title: "Focus on Your Core Business",
-    description: "RevUp is designed to take you just minutes of your time on every transaction, yet be compensated at the maximum level!",
+    description: "RevUp is designed to take you just minutes of your time on every transaction, yet be compensated at the maximum level! Stay focused on selling homes while we completely manage your mortgage pipeline.",
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-      </svg>
-    ),
+    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/icon-heart-purple.png",
+    iconWhite: "https://revup-team.com/wp-content/uploads/2025/05/icon-heart-white.png",
     title: "Improve Your Customer's Experience",
-    description: "Your customers trust you more than anybody. Streamline their home shopping process and provide below-market financing to elevate their experience and lead to more referrals!",
+    description: "Your customers trust you more than anybody. Streamline their home shopping process and provide below-market financing to elevate their experience and generate more referrals for your business!",
   },
 ];
 
@@ -170,16 +161,17 @@ export default function Home() {
 
       <main>
         {/* ===== HERO ===== */}
-        <section id="hero" className="min-h-screen pt-20 flex items-center relative overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-light-bg/50 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
+        <section id="hero" className="min-h-screen pt-20 flex items-center relative overflow-hidden bg-gradient-to-br from-light-bg via-white to-light-bg/60">
+          {/* Background decorations */}
+          <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-primary/5 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-accent/8 blur-[80px] pointer-events-none" />
+          <div className="absolute top-40 left-1/3 w-64 h-64 rounded-full bg-light-bg blur-[60px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 grid lg:grid-cols-2 gap-12 items-center w-full relative z-10">
             <Reveal>
               <div>
-                <div className="inline-block bg-light-bg text-primary font-semibold text-sm px-4 py-1.5 rounded-full mb-6">
+                <div className="inline-block bg-white/80 text-primary font-semibold text-sm px-4 py-1.5 rounded-full mb-6 shadow-sm border border-primary/10">
                   100% Free for Real Estate Professionals
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading text-primary-dark leading-[1.1] tracking-tight">
@@ -199,6 +191,13 @@ export default function Home() {
                   <a href={`tel:${PHONE}`} className="rounded-full border-2 border-primary px-8 py-3.5 text-primary font-semibold hover:bg-primary hover:text-white transition-all">
                     Call {PHONE_DISPLAY}
                   </a>
+                </div>
+                {/* Hero image */}
+                <div className="mt-10 hidden lg:block">
+                  <Image
+                    src="https://revup-team.com/wp-content/uploads/2025/05/people-00.png"
+                    alt="Real estate professionals using RevUp" width={500} height={370} className="rounded-2xl w-full max-w-md" unoptimized
+                  />
                 </div>
               </div>
             </Reveal>
@@ -273,19 +272,22 @@ export default function Home() {
                   Diversify Your Revenue Base
                 </h2>
                 <p className="text-gray-600 max-w-2xl mx-auto mt-4 text-lg">
-                  RevUp is an innovative platform that allows real estate professionals to earn transactional and passive mortgage revenue.
+                  RevUp is an innovative platform that allows real estate professionals to earn transactional and passive mortgage revenue. Our proprietary platform helps you tap into a new source of compliant and turn-key revenue that will grow over time.
                 </p>
               </div>
             </Reveal>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 items-stretch">
               {BENEFITS.map((b, i) => (
                 <Reveal key={b.title} delay={i * 150}>
-                  <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-gray-100 group">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                      {b.icon}
+                  <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100 group h-full flex flex-col hover:-translate-y-1">
+                    <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors overflow-hidden">
+                      <Image src={b.iconPurple} alt="" width={48} height={48}
+                        className="w-10 h-10 object-contain group-hover:hidden" unoptimized />
+                      <Image src={b.iconWhite} alt="" width={48} height={48}
+                        className="w-10 h-10 object-contain hidden group-hover:block" unoptimized />
                     </div>
-                    <h3 className="text-xl font-heading text-primary-dark mb-3">{b.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{b.description}</p>
+                    <h3 className="text-xl font-heading text-primary-dark mb-3 shrink-0">{b.title}</h3>
+                    <p className="text-gray-600 leading-relaxed grow">{b.description}</p>
                   </div>
                 </Reveal>
               ))}
@@ -379,24 +381,62 @@ export default function Home() {
         </section>
 
         {/* ===== FINAL CTA / CONTACT ===== */}
-        <section id="contact" className="py-20 md:py-28 bg-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-light-bg/30 via-transparent to-light-bg/20 pointer-events-none" />
-          <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <section id="contact" className="py-20 md:py-28 bg-gradient-to-br from-light-bg/40 via-white to-light-bg/30 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-accent/5 blur-[80px] pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Reveal>
-              <h2 className="text-3xl md:text-4xl font-heading text-primary-dark text-center mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading text-primary-dark text-center mb-16">
                 Request a 15-Minute Demo
               </h2>
-              <p className="text-gray-600 text-center mb-8 text-lg">
-                Find out exactly how much you can expect to earn. Fill out the form and we will be in touch.
-              </p>
             </Reveal>
-            <Reveal delay={200}>
-              <LeadForm id="contact-form" />
-            </Reveal>
-            <div className="flex items-center justify-center mt-8">
-              <a href={`tel:${PHONE}`} className="rounded-full border-2 border-primary bg-white px-8 py-3.5 text-primary font-semibold hover:bg-primary hover:text-white transition-all text-center">
-                Or Call {PHONE_DISPLAY}
-              </a>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              {/* Left side - info */}
+              <Reveal>
+                <div>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                    Find out exactly how much you can expect to earn. Tell us a little about yourself, and our team will reach out to schedule your free demo.
+                  </p>
+                  <div className="space-y-6 mb-10">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+                      </div>
+                      <div>
+                        <p className="font-heading text-primary-dark">Call Us Directly</p>
+                        <a href={`tel:${PHONE}`} className="text-primary font-semibold text-lg hover:underline">{PHONE_DISPLAY}</a>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                      </div>
+                      <div>
+                        <p className="font-heading text-primary-dark">Email Us</p>
+                        <p className="text-gray-600">info@revup-team.com</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+                      </div>
+                      <div>
+                        <p className="font-heading text-primary-dark">Visit Us</p>
+                        <p className="text-gray-600">222 Main St, Suite 106, Rochester, MI 48307</p>
+                      </div>
+                    </div>
+                  </div>
+                  <Image
+                    src="https://revup-team.com/wp-content/uploads/2025/05/people-00.png"
+                    alt="RevUp team" width={500} height={370}
+                    className="rounded-2xl w-full hidden lg:block" unoptimized
+                  />
+                </div>
+              </Reveal>
+              {/* Right side - form */}
+              <Reveal delay={200}>
+                <LeadForm id="contact-form" />
+              </Reveal>
             </div>
           </div>
         </section>
