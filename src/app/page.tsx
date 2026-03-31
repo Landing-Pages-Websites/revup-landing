@@ -192,13 +192,6 @@ export default function Home() {
                     Call {PHONE_DISPLAY}
                   </a>
                 </div>
-                {/* Hero image */}
-                <div className="mt-10 hidden lg:block bg-white rounded-2xl shadow-lg overflow-hidden max-w-md mx-auto">
-                  <Image
-                    src="https://revup-team.com/wp-content/uploads/2025/05/people-00.png"
-                    alt="Real estate professionals using RevUp" width={500} height={370} className="w-full" unoptimized
-                  />
-                </div>
               </div>
             </Reveal>
             <Reveal delay={200}>
@@ -425,13 +418,6 @@ export default function Home() {
                         <p className="text-gray-600">222 Main St, Suite 106, Rochester, MI 48307</p>
                       </div>
                     </div>
-                  </div>
-                  <div className="rounded-2xl overflow-hidden bg-white shadow-lg hidden lg:block">
-                    <Image
-                      src="https://revup-team.com/wp-content/uploads/2025/05/people-00.png"
-                      alt="RevUp team" width={500} height={370}
-                      className="w-full" unoptimized
-                    />
                   </div>
                 </div>
               </Reveal>
