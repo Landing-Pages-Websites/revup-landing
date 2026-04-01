@@ -56,18 +56,20 @@ const BENEFITS = [
 ];
 
 const STEPS = [
-  { step: "1", title: "Sign Up", description: "Request a demo and get onboarded in minutes. It is 100% free to join." },
-  { step: "2", title: "We Manage the Pipeline", description: "RevUp handles compliance, processing, and support so you can focus on selling homes." },
-  { step: "3", title: "You Earn Revenue", description: "Receive transactional and passive mortgage revenue on every closed loan." },
+  { step: "1", title: "Sign Up for Free", description: "Joining RevUp costs you absolutely nothing. We invest about $2,000 in every new member's training, licensing, and marketing." },
+  { step: "2", title: "Complete Quick Training", description: "Our specialized workflow limits your time on each transaction to just 20 minutes or less. One-time training and testing gets you started." },
+  { step: "3", title: "Start Earning Revenue", description: "Earn transactional revenue on every deal, plus passive monthly revenue from your downline of sponsored members. No limits." },
 ];
 
 const FAQS = [
-  { q: "What is RevUp?", a: "RevUp is a turnkey mortgage revenue program that allows real estate professionals to earn transactional and passive income from mortgage origination, all at zero cost." },
-  { q: "How much does it cost to join?", a: "Nothing. RevUp is 100% free for real estate professionals. We cover all the costs of member support services." },
-  { q: "How do I earn revenue?", a: "You earn revenue on every mortgage transaction processed through the RevUp program. This includes both per-transaction compensation and ongoing passive revenue streams." },
-  { q: "Do I need a mortgage license?", a: "No. RevUp handles all licensing and compliance requirements. You focus on your real estate business while we manage the mortgage side." },
-  { q: "How does RevUp handle compliance?", a: "Our program is fully compliant with all federal and state regulations. Homesite Mortgage is an approved lender for FHA, VA, USDA, Fannie Mae, Freddie Mac, and Ginnie Mae." },
-  { q: "Can I keep my current brokerage?", a: "Yes. RevUp works alongside your existing brokerage. There is no need to switch or change your current setup." },
+  { q: "Does the RevUp program require any financial investment from me?", a: "No, RevUp costs you nothing and all costs associated with your RevUp membership are absorbed by us." },
+  { q: "How much of my time will RevUp take up?", a: "We designed a specialized workflow that limits your time on each transaction to just 20 minutes or less. There is a one-time upfront investment of some time required to complete our training and testing program." },
+  { q: "What mortgage programs can RevUp members offer their clients?", a: "RevUp's parent company Homesite Mortgage is a nationally approved FHA, VA, and USDA lender. We also offer all Fannie Mae and Freddie Mac programs, plus a zero-down FHA program, a portfolio Bridge Loan, and various DPA programs." },
+  { q: "What types of revenue opportunities does RevUp offer?", a: "RevUp offers both transactional revenue and passive revenue from your downline of sponsored members." },
+  { q: "Is RevUp compliant with all mortgage and real estate regulations?", a: "Yes, RevUp uses a proprietary and custom-designed software to document our member's activities so we remain compliant with RESPA and HUD." },
+  { q: "Are you a mortgage lender or a mortgage broker?", a: "We are a mortgage lender. We underwrite and fund our own loans and close them in our name. Brokers cannot underwrite, fund, or close loans in their names." },
+  { q: "What states does Homesite Mortgage operate in?", a: "We currently operate in Michigan, Florida, Illinois, and Missouri. We are expanding into other states and plan to offer our services nationally by the end of 2026." },
+  { q: "Does it cost anything to join RevUp?", a: "Joining RevUp costs you absolutely nothing! In fact, we invest about $2,000 for every new member's training, licensing, and marketing costs." },
 ];
 
 function DualCTA() {
