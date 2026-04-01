@@ -36,19 +36,19 @@ const GOVERNMENT_LOGOS = [
 
 const BENEFITS = [
   {
-    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/icon-repair-purple.png",
+    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/realtors-icon-01.gif",
     iconWhite: "https://revup-team.com/wp-content/uploads/2025/05/icon-repair-white.png",
     title: "No Additional Overhead Costs",
     description: "RevUp costs you absolutely nothing! Our member support services are exemplary and we cover 100% of cost for these services. You keep your current setup and add a powerful new revenue stream with zero investment.",
   },
   {
-    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/icon-timer-purple.png",
+    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/realtor-icon-2.gif",
     iconWhite: "https://revup-team.com/wp-content/uploads/2025/05/icon-timer-white.png",
     title: "Focus on Your Core Business",
     description: "RevUp is designed to take you just minutes of your time on every transaction, yet be compensated at the maximum level! Stay focused on selling homes while we completely manage your mortgage pipeline.",
   },
   {
-    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/icon-heart-purple.png",
+    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/realtor-icon-3.gif",
     iconWhite: "https://revup-team.com/wp-content/uploads/2025/05/icon-heart-white.png",
     title: "Improve Your Customer's Experience",
     description: "Your customers trust you more than anybody. Streamline their home shopping process and provide below-market financing to elevate their experience and generate more referrals for your business!",
@@ -161,7 +161,7 @@ export default function Home() {
 
       <main>
         {/* ===== HERO ===== */}
-        <section id="hero" className="min-h-screen pt-20 flex items-center relative overflow-hidden bg-gradient-to-br from-light-bg via-white to-light-bg/60">
+        <section id="hero" className="pt-20 relative overflow-hidden bg-gradient-to-br from-light-bg via-white to-light-bg/60">
           {/* Background decorations */}
           <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-primary/5 via-transparent to-transparent pointer-events-none" />
           <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
@@ -191,6 +191,12 @@ export default function Home() {
                   <a href={`tel:${PHONE}`} className="rounded-full border-2 border-primary px-8 py-3.5 text-primary font-semibold hover:bg-primary hover:text-white transition-all">
                     Call {PHONE_DISPLAY}
                   </a>
+                </div>
+                <div className="mt-10 rounded-2xl overflow-hidden shadow-lg hidden lg:block">
+                  <Image
+                    src="https://revup-team.com/wp-content/uploads/2025/05/realtosr-image.jpg"
+                    alt="Real estate agent handing keys to happy client" width={614} height={500} className="w-full object-cover" unoptimized
+                  />
                 </div>
               </div>
             </Reveal>
@@ -273,11 +279,9 @@ export default function Home() {
               {BENEFITS.map((b, i) => (
                 <Reveal key={b.title} delay={i * 150}>
                   <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100 group h-full flex flex-col hover:-translate-y-1">
-                    <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors overflow-hidden">
-                      <Image src={b.iconPurple} alt="" width={48} height={48}
-                        className="w-10 h-10 object-contain group-hover:hidden" unoptimized />
-                      <Image src={b.iconWhite} alt="" width={48} height={48}
-                        className="w-10 h-10 object-contain hidden group-hover:block" unoptimized />
+                    <div className="w-full aspect-square max-w-[200px] mx-auto mb-6 flex items-center justify-center">
+                      <Image src={b.iconPurple} alt={b.title} width={200} height={228}
+                        className="w-full h-full object-contain" unoptimized />
                     </div>
                     <h3 className="text-xl font-heading text-primary-dark mb-3 shrink-0">{b.title}</h3>
                     <p className="text-gray-600 leading-relaxed grow">{b.description}</p>
@@ -418,6 +422,13 @@ export default function Home() {
                         <p className="text-gray-600">222 Main St, Suite 106, Rochester, MI 48307</p>
                       </div>
                     </div>
+                  </div>
+                  <div className="mt-10 rounded-2xl overflow-hidden shadow-lg">
+                    <Image
+                      src="https://revup-team.com/wp-content/uploads/2025/05/about-workers.jpg"
+                      alt="RevUp team at work" width={612} height={450}
+                      className="w-full object-cover" unoptimized
+                    />
                   </div>
                 </div>
               </Reveal>
