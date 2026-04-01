@@ -4,6 +4,8 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import LeadForm from "@/components/LeadForm";
 import QueryParamPersistence from "@/components/QueryParamPersistence";
+import TiltCard from "@/components/TiltCard";
+import LogoTicker from "@/components/LogoTicker";
 import { useState } from "react";
 
 const PHONE = "8888538679";
@@ -166,9 +168,9 @@ export default function Home() {
         <section id="hero" className="pt-20 relative overflow-hidden bg-gradient-to-br from-light-bg via-white to-light-bg/60">
           {/* Background decorations */}
           <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-primary/5 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
-          <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-accent/8 blur-[80px] pointer-events-none" />
-          <div className="absolute top-40 left-1/3 w-64 h-64 rounded-full bg-light-bg blur-[60px] pointer-events-none" />
+          <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[100px] pointer-events-none animate-float" />
+          <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-accent/8 blur-[80px] pointer-events-none animate-float-reverse" />
+          <div className="absolute top-40 left-1/3 w-64 h-64 rounded-full bg-light-bg blur-[60px] pointer-events-none animate-float" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 grid lg:grid-cols-2 gap-12 items-center w-full relative z-10">
             <Reveal>
@@ -179,7 +181,7 @@ export default function Home() {
                 <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading text-primary-dark leading-[1.1] tracking-tight">
                   Start Earning Turnkey{" "}
                   <span className="relative">
-                    <span className="relative z-10">Mortgage Revenue</span>
+                    <span className="relative z-10 animate-shimmer">Mortgage Revenue</span>
                     <span className="absolute bottom-1 left-0 w-full h-3 bg-accent/30 -z-0" />
                   </span>
                 </h1>
@@ -187,7 +189,7 @@ export default function Home() {
                   RevUp empowers real estate agents, brokers, and investors to generate transactional and passive mortgage revenue, at zero cost to you.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
-                  <a href="#contact" className="rounded-full bg-accent px-8 py-3.5 text-white font-semibold hover:bg-accent/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                  <a href="#contact" className="rounded-full bg-accent px-8 py-3.5 text-white font-semibold hover:bg-accent/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 animate-pulse-glow">
                     Request a Demo
                   </a>
                   <a href={`tel:${PHONE}`} className="rounded-full border-2 border-primary px-8 py-3.5 text-primary font-semibold hover:bg-primary hover:text-white transition-all">
@@ -226,12 +228,7 @@ export default function Home() {
               <p className="text-center text-gray-500 font-semibold mb-8 tracking-wide uppercase text-sm">
                 Trusted by agents at leading brokerages
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-                {PARTNER_LOGOS.map((logo, i) => (
-                  <Image key={i} src={logo.src} alt={logo.alt} width={120} height={60}
-                    className="h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" unoptimized />
-                ))}
-              </div>
+              <LogoTicker logos={PARTNER_LOGOS} />
             </Reveal>
           </div>
         </section>
