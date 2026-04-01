@@ -134,6 +134,37 @@ export default function LeadForm({ id }: LeadFormProps) {
         See how RevUp can generate mortgage revenue for your business.
       </p>
 
+      {/* Name */}
+      <div>
+        <input
+          type="text" name="name" placeholder="Full Name" required
+          value={name} onChange={(e) => setName(e.target.value)}
+          className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+        />
+        {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
+      </div>
+
+      {/* Email */}
+      <div>
+        <input
+          type="email" name="email" placeholder="Email Address" required
+          value={email} onChange={(e) => setEmail(e.target.value)}
+          className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+        />
+        {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
+      </div>
+
+      {/* Phone */}
+      <div>
+        <input
+          type="tel" name="phone" placeholder="Phone Number" required
+          inputMode="numeric" value={phone}
+          onChange={(e) => setPhone(formatPhone(e.target.value))}
+          className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+        />
+        {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
+      </div>
+
       {/* Question 1: 3+ years experience */}
       <div>
         <p className="text-white text-sm font-semibold mb-2">Do you have at least 3 years of real estate experience?</p>
@@ -176,37 +207,6 @@ export default function LeadForm({ id }: LeadFormProps) {
           </label>
         </div>
         {errors.fullTime && <p className="text-red-400 text-xs mt-1">{errors.fullTime}</p>}
-      </div>
-
-      {/* Name */}
-      <div>
-        <input
-          type="text" name="name" placeholder="Full Name" required
-          value={name} onChange={(e) => setName(e.target.value)}
-          className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
-        />
-        {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
-      </div>
-
-      {/* Email */}
-      <div>
-        <input
-          type="email" name="email" placeholder="Email Address" required
-          value={email} onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
-        />
-        {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
-      </div>
-
-      {/* Phone */}
-      <div>
-        <input
-          type="tel" name="phone" placeholder="Phone Number" required
-          inputMode="numeric" value={phone}
-          onChange={(e) => setPhone(formatPhone(e.target.value))}
-          className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
-        />
-        {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
       </div>
 
       {/* Consent */}
