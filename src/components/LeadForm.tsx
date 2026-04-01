@@ -46,13 +46,15 @@ function validateEmail(email: string): string | null {
   return null;
 }
 
+const CALENDLY_URL = "https://calendly.com/dsanders-homesitedirect/revup-15-min-demo-mg-ds";
+
 export default function LeadForm({ id }: LeadFormProps) {
   const { submit: submitLead } = useMegaLeadForm();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [role, setRole] = useState("");
+  const [experience, setExperience] = useState("");
+  const [fullTime, setFullTime] = useState("");
   const [consent, setConsent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -68,9 +70,9 @@ export default function LeadForm({ id }: LeadFormProps) {
     if (phoneErr) newErrors.phone = phoneErr;
     const emailErr = validateEmail(email);
     if (emailErr) newErrors.email = emailErr;
-    if (!firstName.trim()) newErrors.firstName = "First name is required.";
-    if (!lastName.trim()) newErrors.lastName = "Last name is required.";
-    if (!role) newErrors.role = "Please select your professional role.";
+    if (!name.trim()) newErrors.name = "Name is required.";
+    if (!experience) newErrors.experience = "Please select an option.";
+    if (!fullTime) newErrors.fullTime = "Please select an option.";
     if (!consent) newErrors.consent = "You must agree to be contacted.";
 
     if (Object.keys(newErrors).length > 0) {
@@ -83,16 +85,24 @@ export default function LeadForm({ id }: LeadFormProps) {
 
     try {
       await submitLead({
-        firstName: firstName.trim(),
-        lastName: lastName.trim(),
+        firstName: name.trim().split(" ")[0] || name.trim(),
+        lastName: name.trim().split(" ").slice(1).join(" ") || "",
         email: email.trim(),
         phone: digits,
-        professionalRole: role,
+        threeYearsExperience: experience,
+        fullTimeAgent: fullTime,
       });
       setSubmitted(true);
+      // Redirect to Calendly after short delay
+      setTimeout(() => {
+        window.location.href = CALENDLY_URL;
+      }, 1500);
     } catch (err) {
       console.error("Form submission error:", err);
       setSubmitted(true);
+      setTimeout(() => {
+        window.location.href = CALENDLY_URL;
+      }, 1500);
     } finally {
       setSubmitting(false);
     }
@@ -102,12 +112,18 @@ export default function LeadForm({ id }: LeadFormProps) {
     return (
       <div id={id} className="rounded-2xl bg-primary-dark/90 backdrop-blur-md p-8 text-white text-center">
         <div className="text-3xl mb-4 font-heading">Thank You!</div>
-        <p className="text-lg text-white/90">
-          Your demo request has been received. Our team will reach out to schedule your 15-minute demo.
+        <p className="text-lg text-white/90 mb-4">
+          Redirecting you to book your 15-minute demo...
         </p>
+        <a href={CALENDLY_URL} className="inline-block rounded-full bg-accent px-6 py-3 text-white font-semibold hover:bg-accent/90 transition-colors">
+          Book Your Demo Now
+        </a>
       </div>
     );
   }
+
+  const radioClasses = "flex items-center gap-3 cursor-pointer rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white hover:border-accent/50 transition-colors";
+  const radioActiveClasses = "flex items-center gap-3 cursor-pointer rounded-lg border-2 border-accent bg-accent/20 px-4 py-3 text-white";
 
   return (
     <form id={id} onSubmit={handleSubmit} className="rounded-2xl bg-primary-dark/90 backdrop-blur-md p-6 md:p-8 space-y-4" noValidate>
@@ -118,25 +134,61 @@ export default function LeadForm({ id }: LeadFormProps) {
         See how RevUp can generate mortgage revenue for your business.
       </p>
 
-      <div className="grid grid-cols-2 gap-3">
-        <div>
-          <input
-            type="text" name="firstName" placeholder="First Name" required
-            value={firstName} onChange={(e) => setFirstName(e.target.value)}
-            className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
-          />
-          {errors.firstName && <p className="text-red-400 text-xs mt-1">{errors.firstName}</p>}
+      {/* Question 1: 3+ years experience */}
+      <div>
+        <p className="text-white text-sm font-semibold mb-2">Do you have at least 3 years of real estate experience?</p>
+        <div className="grid grid-cols-2 gap-3">
+          <label className={experience === "Yes" ? radioActiveClasses : radioClasses}>
+            <input type="radio" name={`${id}-experience`} value="Yes" checked={experience === "Yes"} onChange={() => setExperience("Yes")} className="sr-only" />
+            <span className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${experience === "Yes" ? "border-accent bg-accent" : "border-white/40"}`}>
+              {experience === "Yes" && <span className="w-2 h-2 rounded-full bg-white" />}
+            </span>
+            Yes
+          </label>
+          <label className={experience === "No" ? radioActiveClasses : radioClasses}>
+            <input type="radio" name={`${id}-experience`} value="No" checked={experience === "No"} onChange={() => setExperience("No")} className="sr-only" />
+            <span className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${experience === "No" ? "border-accent bg-accent" : "border-white/40"}`}>
+              {experience === "No" && <span className="w-2 h-2 rounded-full bg-white" />}
+            </span>
+            No
+          </label>
         </div>
-        <div>
-          <input
-            type="text" name="lastName" placeholder="Last Name" required
-            value={lastName} onChange={(e) => setLastName(e.target.value)}
-            className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
-          />
-          {errors.lastName && <p className="text-red-400 text-xs mt-1">{errors.lastName}</p>}
-        </div>
+        {errors.experience && <p className="text-red-400 text-xs mt-1">{errors.experience}</p>}
       </div>
 
+      {/* Question 2: Full-time agent */}
+      <div>
+        <p className="text-white text-sm font-semibold mb-2">Are you a full-time real estate agent?</p>
+        <div className="grid grid-cols-2 gap-3">
+          <label className={fullTime === "Yes" ? radioActiveClasses : radioClasses}>
+            <input type="radio" name={`${id}-fulltime`} value="Yes" checked={fullTime === "Yes"} onChange={() => setFullTime("Yes")} className="sr-only" />
+            <span className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${fullTime === "Yes" ? "border-accent bg-accent" : "border-white/40"}`}>
+              {fullTime === "Yes" && <span className="w-2 h-2 rounded-full bg-white" />}
+            </span>
+            Yes
+          </label>
+          <label className={fullTime === "No" ? radioActiveClasses : radioClasses}>
+            <input type="radio" name={`${id}-fulltime`} value="No" checked={fullTime === "No"} onChange={() => setFullTime("No")} className="sr-only" />
+            <span className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${fullTime === "No" ? "border-accent bg-accent" : "border-white/40"}`}>
+              {fullTime === "No" && <span className="w-2 h-2 rounded-full bg-white" />}
+            </span>
+            No
+          </label>
+        </div>
+        {errors.fullTime && <p className="text-red-400 text-xs mt-1">{errors.fullTime}</p>}
+      </div>
+
+      {/* Name */}
+      <div>
+        <input
+          type="text" name="name" placeholder="Full Name" required
+          value={name} onChange={(e) => setName(e.target.value)}
+          className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+        />
+        {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
+      </div>
+
+      {/* Email */}
       <div>
         <input
           type="email" name="email" placeholder="Email Address" required
@@ -146,6 +198,7 @@ export default function LeadForm({ id }: LeadFormProps) {
         {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
       </div>
 
+      {/* Phone */}
       <div>
         <input
           type="tel" name="phone" placeholder="Phone Number" required
@@ -156,26 +209,7 @@ export default function LeadForm({ id }: LeadFormProps) {
         {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
       </div>
 
-      <div className="relative">
-        <select
-          name="professionalRole" required value={role}
-          onChange={(e) => setRole(e.target.value)}
-          className="w-full appearance-none rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 pr-10 text-white outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
-        >
-          <option value="" disabled className="text-gray-900">Professional Role</option>
-          <option value="Real Estate Agent" className="text-gray-900">Real Estate Agent</option>
-          <option value="Real Estate Broker" className="text-gray-900">Real Estate Broker</option>
-          <option value="Insurance Agent" className="text-gray-900">Insurance Agent</option>
-          <option value="Investor" className="text-gray-900">Investor</option>
-        </select>
-        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-          <svg className="w-5 h-5 text-white/50" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-          </svg>
-        </div>
-        {errors.role && <p className="text-red-400 text-xs mt-1">{errors.role}</p>}
-      </div>
-
+      {/* Consent */}
       <label className="flex items-start gap-3 cursor-pointer">
         <input
           type="checkbox" name="privacyConsent" required
