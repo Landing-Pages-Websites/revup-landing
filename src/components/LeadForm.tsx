@@ -55,7 +55,6 @@ export default function LeadForm({ id }: LeadFormProps) {
   const [phone, setPhone] = useState("");
   const [experience, setExperience] = useState("");
   const [fullTime, setFullTime] = useState("");
-  const [consent, setConsent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -73,7 +72,6 @@ export default function LeadForm({ id }: LeadFormProps) {
     if (!name.trim()) newErrors.name = "Name is required.";
     if (!experience) newErrors.experience = "Please select an option.";
     if (!fullTime) newErrors.fullTime = "Please select an option.";
-    if (!consent) newErrors.consent = "You must agree to be contacted.";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -208,24 +206,6 @@ export default function LeadForm({ id }: LeadFormProps) {
         </div>
         {errors.fullTime && <p className="text-red-400 text-xs mt-1">{errors.fullTime}</p>}
       </div>
-
-      {/* Consent */}
-      <label className="flex items-start gap-3 cursor-pointer">
-        <input
-          type="checkbox" name="privacyConsent" required
-          checked={consent} onChange={(e) => setConsent(e.target.checked)}
-          className="mt-1 h-4 w-4 rounded border-white/30 bg-white/10 text-accent focus:ring-accent shrink-0"
-        />
-        <span className="text-xs text-white/70 leading-relaxed">
-          I agree to be contacted by Homesite Mortgage and RevUp via call, email or text.
-          To opt out you can reply &apos;stop&apos; at any time or click the unsubscribe link via the emails.
-          Message and data rates may apply.{" "}
-          <a href="https://revup-team.com/terms-of-use/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">
-            Link to Privacy Policy
-          </a>
-        </span>
-      </label>
-      {errors.consent && <p className="text-red-400 text-xs mt-1">{errors.consent}</p>}
 
       <button
         type="submit" disabled={submitting || submitted}
