@@ -78,7 +78,7 @@ function DualCTA() {
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
       <a href="#contact" className="rounded-full bg-accent px-8 py-3.5 text-white font-semibold hover:bg-accent/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center">
-        Request a Demo
+        Request a 15-Min Demo
       </a>
       <a href={`tel:${PHONE}`} className="rounded-full border-2 border-primary bg-white px-8 py-3.5 text-primary font-semibold hover:bg-primary hover:text-white transition-all text-center">
         Call {PHONE_DISPLAY}
@@ -159,7 +159,7 @@ export default function Home() {
           <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
           </svg>
-          <span className="sr-only">Request a Demo</span>
+          <span className="sr-only">Request a 15-Min Demo</span>
         </a>
       </div>
 
@@ -176,7 +176,7 @@ export default function Home() {
             <Reveal>
               <div>
                 <div className="inline-block bg-white/80 text-primary font-semibold text-sm px-4 py-1.5 rounded-full mb-6 shadow-sm border border-primary/10">
-                  100% Free for Real Estate Professionals
+                  100% Free for Qualified Real Estate Professionals
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading text-primary-dark leading-[1.1] tracking-tight">
                   Start Earning Turnkey{" "}
@@ -186,11 +186,11 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
-                  RevUp empowers real estate agents, brokers, and investors to generate transactional and passive mortgage revenue, at zero cost to you.
+                  RevUp empowers real estate agents and brokers to generate transactional and passive mortgage revenue, at zero cost to you.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
                   <a href="#contact" className="rounded-full bg-accent px-8 py-3.5 text-white font-semibold hover:bg-accent/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 animate-pulse-glow">
-                    Request a Demo
+                    Request a 15-Min Demo
                   </a>
                   <a href={`tel:${PHONE}`} className="rounded-full border-2 border-primary px-8 py-3.5 text-primary font-semibold hover:bg-primary hover:text-white transition-all">
                     Call {PHONE_DISPLAY}
@@ -214,7 +214,7 @@ export default function Home() {
         <section className="bg-gradient-to-r from-primary via-primary-dark to-primary py-8">
           <Reveal>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
-              {["100% Free to Join", "Zero Overhead", "Compliant & Turn-Key", "Passive Revenue Monthly"].map((s) => (
+              {["Free Training & Licensing", "Zero Overhead", "Compliant & Turn-Key", "Passive Revenue Monthly"].map((s) => (
                 <div key={s} className="font-heading text-lg md:text-xl">{s}</div>
               ))}
             </div>
@@ -319,7 +319,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
               <a href="#contact" className="rounded-full bg-accent px-8 py-3.5 text-white font-semibold hover:bg-accent/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center">
-                Request a Demo
+                Request a 15-Min Demo
               </a>
               <a href={`tel:${PHONE}`} className="rounded-full border-2 border-white px-8 py-3.5 text-white font-semibold hover:bg-white hover:text-primary-dark transition-all text-center">
                 Call {PHONE_DISPLAY}
@@ -391,7 +391,7 @@ export default function Home() {
               <Reveal>
                 <div>
                   <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                    Find out exactly how much you can expect to earn. Tell us a little about yourself, and our team will reach out to schedule your free demo.
+                    Find out exactly how much you can expect to earn. Tell us a little about yourself, and our team will reach out to schedule your free 15-minute demo.
                   </p>
                   <div className="space-y-6 mb-10">
                     <div className="flex items-center gap-4">

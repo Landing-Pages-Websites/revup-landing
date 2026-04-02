@@ -114,7 +114,7 @@ export default function LeadForm({ id }: LeadFormProps) {
           Redirecting you to book your 15-minute demo...
         </p>
         <a href={CALENDLY_URL} className="inline-block rounded-full bg-accent px-6 py-3 text-white font-semibold hover:bg-accent/90 transition-colors">
-          Book Your Demo Now
+          Book Your 15-Min Demo Now
         </a>
       </div>
     );
@@ -211,7 +211,7 @@ export default function LeadForm({ id }: LeadFormProps) {
         type="submit" disabled={submitting || submitted}
         className="w-full rounded-lg bg-accent py-3.5 text-white font-semibold text-lg hover:bg-accent/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {submitting ? "Submitting..." : "Request Your Demo"}
+        {submitting ? "Submitting..." : "Request Your 15-Min Demo"}
       </button>
     </form>
   );
