@@ -48,6 +48,23 @@ function validateEmail(email: string): string | null {
 
 const CALENDLY_URL = "https://calendly.com/dsanders-homesitedirect/revup-15-min-demo-mg-ds";
 
+// Read utm_campaign from URL (or sessionStorage fallback)
+function getUtmCampaign(): string {
+  if (typeof window === "undefined") return "";
+  const params = new URLSearchParams(window.location.search);
+  const fromUrl = params.get("utm_campaign");
+  if (fromUrl) return fromUrl;
+  // Fallback: check sessionStorage (persisted by QueryParamPersistence)
+  try {
+    const stored = sessionStorage.getItem("query_params");
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      if (parsed.utm_campaign) return parsed.utm_campaign;
+    }
+  } catch { /* ignore */ }
+  return "";
+}
+
 export default function LeadForm({ id }: LeadFormProps) {
   const { submit: submitLead } = useMegaLeadForm();
   const [name, setName] = useState("");
@@ -82,6 +99,7 @@ export default function LeadForm({ id }: LeadFormProps) {
     setSubmitting(true);
 
     try {
+      const utmCampaign = getUtmCampaign();
       await submitLead({
         firstName: name.trim().split(" ")[0] || name.trim(),
         lastName: name.trim().split(" ").slice(1).join(" ") || "",
@@ -89,6 +107,7 @@ export default function LeadForm({ id }: LeadFormProps) {
         phone: digits,
         threeYearsExperience: experience,
         fullTimeAgent: fullTime,
+        ...(utmCampaign ? { utm_campaign: utmCampaign } : {}),
       });
       setSubmitted(true);
       // Redirect to Calendly after short delay
