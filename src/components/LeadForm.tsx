@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useRef, FormEvent } from "react";
 import { useMegaLeadForm } from "@/hooks/useMegaLeadForm";
 
 interface LeadFormProps {
@@ -76,10 +76,15 @@ export default function LeadForm({ id }: LeadFormProps) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  // Synchronous lock — React setState is async, so 5 rapid clicks in the
+  // same tick all see `submitting === false` until rerender. useRef gives
+  // us a same-tick guard so only the first click runs the submission.
+  const lockRef = useRef(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (submitting || submitted) return;
+    if (lockRef.current || submitting || submitted) return;
+    lockRef.current = true;
 
     const newErrors: Record<string, string> = {};
     const digits = getDigits(phone);
@@ -94,6 +99,7 @@ export default function LeadForm({ id }: LeadFormProps) {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      lockRef.current = false;
       return;
     }
 
@@ -241,7 +247,7 @@ export default function LeadForm({ id }: LeadFormProps) {
       </div>
 
       <button
-        type="submit" disabled={submitting || submitted}
+        type="button" disabled={submitting || submitted} onClick={handleSubmit}
         className="w-full rounded-lg bg-accent py-3.5 text-white font-semibold text-lg hover:bg-accent/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {submitting ? "Submitting..." : "Request Your 15-Min Demo"}
