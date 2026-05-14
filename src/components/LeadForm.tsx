@@ -67,7 +67,8 @@ function getUtmCampaign(): string {
 
 export default function LeadForm({ id }: LeadFormProps) {
   const { submit: submitLead } = useMegaLeadForm();
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [experience, setExperience] = useState("");
@@ -86,7 +87,8 @@ export default function LeadForm({ id }: LeadFormProps) {
     if (phoneErr) newErrors.phone = phoneErr;
     const emailErr = validateEmail(email);
     if (emailErr) newErrors.email = emailErr;
-    if (!name.trim()) newErrors.name = "Name is required.";
+    if (!firstName.trim()) newErrors.firstName = "First name is required.";
+    if (!lastName.trim()) newErrors.lastName = "Last name is required.";
     if (!experience) newErrors.experience = "Please select an option.";
     if (!fullTime) newErrors.fullTime = "Please select an option.";
 
@@ -101,8 +103,8 @@ export default function LeadForm({ id }: LeadFormProps) {
     try {
       const utmCampaign = getUtmCampaign();
       await submitLead({
-        firstName: name.trim().split(" ")[0] || name.trim(),
-        lastName: name.trim().split(" ").slice(1).join(" ") || "",
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
         email: email.trim(),
         phone: digits,
         threeYearsExperience: experience,
@@ -151,14 +153,26 @@ export default function LeadForm({ id }: LeadFormProps) {
         See how RevUp can generate mortgage revenue for your business.
       </p>
 
-      {/* Name */}
-      <div>
-        <input
-          type="text" name="name" placeholder="Full Name" required
-          value={name} onChange={(e) => setName(e.target.value)}
-          className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
-        />
-        {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
+      {/* First Name + Last Name */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <input
+            type="text" name="firstName" placeholder="First Name" required
+            autoComplete="given-name"
+            value={firstName} onChange={(e) => setFirstName(e.target.value)}
+            className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+          />
+          {errors.firstName && <p className="text-red-400 text-xs mt-1">{errors.firstName}</p>}
+        </div>
+        <div>
+          <input
+            type="text" name="lastName" placeholder="Last Name" required
+            autoComplete="family-name"
+            value={lastName} onChange={(e) => setLastName(e.target.value)}
+            className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+          />
+          {errors.lastName && <p className="text-red-400 text-xs mt-1">{errors.lastName}</p>}
+        </div>
       </div>
 
       {/* Email */}
