@@ -47,6 +47,7 @@ function validateEmail(email: string): string | null {
 }
 
 const CALENDLY_URL = "https://calendly.com/dsanders-homesitedirect/revup-15-min-demo-mg-ds";
+const THANK_YOU_URL = "/thank-you";
 
 // Read utm_campaign from URL (or sessionStorage fallback)
 function getUtmCampaign(): string {
@@ -106,6 +107,11 @@ export default function LeadForm({ id }: LeadFormProps) {
     setErrors({});
     setSubmitting(true);
 
+    // Qualified leads book a demo (Calendly); everyone else (a "No" to either
+    // qualifying question) still submits as a lead but lands on the thank-you page.
+    const isQualified = experience === "Yes" && fullTime === "Yes";
+    const redirectUrl = isQualified ? CALENDLY_URL : THANK_YOU_URL;
+
     try {
       const utmCampaign = getUtmCampaign();
       await submitLead({
@@ -118,15 +124,15 @@ export default function LeadForm({ id }: LeadFormProps) {
         ...(utmCampaign ? { utm_campaign: utmCampaign } : {}),
       });
       setSubmitted(true);
-      // Redirect to Calendly after short delay
+      // Redirect after short delay
       setTimeout(() => {
-        window.location.href = CALENDLY_URL;
+        window.location.href = redirectUrl;
       }, 1500);
     } catch (err) {
       console.error("Form submission error:", err);
       setSubmitted(true);
       setTimeout(() => {
-        window.location.href = CALENDLY_URL;
+        window.location.href = redirectUrl;
       }, 1500);
     } finally {
       setSubmitting(false);
@@ -134,15 +140,24 @@ export default function LeadForm({ id }: LeadFormProps) {
   };
 
   if (submitted) {
+    const isQualified = experience === "Yes" && fullTime === "Yes";
     return (
       <div id={id} className="rounded-2xl bg-primary-dark/90 backdrop-blur-md p-8 text-white text-center">
         <div className="text-3xl mb-4 font-heading">Thank You!</div>
         <p className="text-lg text-white/90 mb-4">
-          Redirecting you to book your 15-minute demo...
+          {isQualified
+            ? "Redirecting you to book your 15-minute demo..."
+            : "Redirecting you..."}
         </p>
-        <a href={CALENDLY_URL} className="inline-block rounded-full bg-accent px-6 py-3 text-white font-semibold hover:bg-accent/90 transition-colors">
-          Book Your 15-Min Demo Now
-        </a>
+        {isQualified ? (
+          <a href={CALENDLY_URL} className="inline-block rounded-full bg-accent px-6 py-3 text-white font-semibold hover:bg-accent/90 transition-colors">
+            Book Your 15-Min Demo Now
+          </a>
+        ) : (
+          <a href={THANK_YOU_URL} className="inline-block rounded-full bg-accent px-6 py-3 text-white font-semibold hover:bg-accent/90 transition-colors">
+            Continue
+          </a>
+        )}
       </div>
     );
   }

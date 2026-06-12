@@ -186,7 +186,7 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
-                  RevUp empowers real estate agents and brokers to generate transactional and passive mortgage revenue, at zero cost to you.
+                  Earn up to $4000 per transaction in just 10 minutes.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
                   <a href="#contact" className="rounded-full bg-accent px-8 py-3.5 text-white font-semibold hover:bg-accent/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 animate-pulse-glow">
