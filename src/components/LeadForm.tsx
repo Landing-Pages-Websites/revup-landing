@@ -200,6 +200,7 @@ export default function LeadForm({ id }: LeadFormProps) {
       <div>
         <input
           type="email" name="email" placeholder="Email Address" required
+          pattern="[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}"
           value={email} onChange={(e) => setEmail(e.target.value)}
           className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
         />
@@ -210,6 +211,7 @@ export default function LeadForm({ id }: LeadFormProps) {
       <div>
         <input
           type="tel" name="phone" placeholder="Phone Number" required
+          pattern="\(\d{3}\) \d{3}-\d{4}"
           inputMode="numeric" value={phone}
           onChange={(e) => setPhone(formatPhone(e.target.value))}
           className="w-full rounded-lg border-2 border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"

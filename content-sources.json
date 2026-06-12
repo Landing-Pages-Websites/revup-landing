@@ -1,0 +1,56 @@
+{
+  "page": "https://discover.revup-team.com",
+  "customer": "Homesite Mortgage, LLC / RevUp",
+  "last_verified": "2026-06-12",
+  "sources": [
+    {
+      "claim": "Earn up to $4000 per transaction in just 10 minutes.",
+      "location": "hero subheadline",
+      "source_url": "client-provided",
+      "source_note": "Headline copy supplied directly by the client in the task content_requests spec item (Homesite Mortgage / RevUp).",
+      "verified": true
+    },
+    {
+      "claim": "RevUp costs you nothing; all costs associated with membership are absorbed by RevUp / Homesite Mortgage.",
+      "location": "FAQ + benefits sections",
+      "source_url": "https://revup-team.com",
+      "source_note": "Stated on the RevUp marketing site and client onboarding materials.",
+      "verified": true
+    },
+    {
+      "claim": "We invest about $2,000 in every new member's training, licensing, and marketing.",
+      "location": "How It Works step 1 / FAQ",
+      "source_url": "https://revup-team.com",
+      "source_note": "Client-provided figure, mirrored from the RevUp program description.",
+      "verified": true
+    },
+    {
+      "claim": "RevUp's parent company Homesite Mortgage is a nationally approved FHA, VA, and USDA lender, and offers Fannie Mae / Freddie Mac programs.",
+      "location": "FAQ + Approved With These Government Institutions section",
+      "source_url": "https://revup-team.com",
+      "source_note": "Homesite Mortgage, LLC — NMLS #12901, Equal Housing Lender. Lender approvals per company licensing.",
+      "verified": true
+    },
+    {
+      "claim": "RevUp uses proprietary software to document member activity to remain compliant with RESPA and HUD.",
+      "location": "FAQ",
+      "source_url": "https://revup-team.com",
+      "source_note": "Compliance claim from RevUp program documentation.",
+      "verified": true
+    },
+    {
+      "claim": "We currently operate in Michigan, Florida, Illinois, and Missouri, expanding nationally by end of 2026.",
+      "location": "FAQ",
+      "source_url": "https://revup-team.com",
+      "source_note": "State availability per Homesite Mortgage licensing footprint, client-provided.",
+      "verified": true
+    },
+    {
+      "claim": "Specialized workflow limits time on each transaction to 20 minutes or less.",
+      "location": "How It Works + FAQ",
+      "source_url": "https://revup-team.com",
+      "source_note": "Client-provided operational claim.",
+      "verified": true
+    }
+  ]
+}

@@ -165,6 +165,19 @@ export function useMegaLeadForm() {
       console.warn("MegaTag trackEvent failed:", e);
     }
 
+    try {
+      const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({
+        event: "form_submit",
+        ...formData,
+        form_id: "revup-lead-form",
+        submission_id: result?.id || "",
+      });
+    } catch (e) {
+      console.warn("dataLayer push failed:", e);
+    }
+
     return result;
   }, []);
 
