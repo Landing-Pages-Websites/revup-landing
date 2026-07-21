@@ -3,9 +3,9 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "RevUp — Earn Turnkey Mortgage Revenue | Free for Real Estate Agents",
+  title: "RevUp — Earn Turnkey Mortgage Revenue for Real Estate Agents",
   description:
-    "RevUp empowers real estate agents to generate transactional and passive mortgage revenue at zero cost. Join 100% free. Compliant and turn-key.",
+    "RevUp empowers real estate agents to generate transactional and passive mortgage revenue for just $39 — almost no cost to you. Compliant and turn-key.",
   icons: { icon: "/favicon.png" },
 };
 

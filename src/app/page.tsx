@@ -40,8 +40,8 @@ const BENEFITS = [
   {
     iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/realtors-icon-01.gif",
     iconWhite: "https://revup-team.com/wp-content/uploads/2025/05/icon-repair-white.png",
-    title: "No Additional Overhead Costs",
-    description: "RevUp costs you absolutely nothing! Our member support services are exemplary and we cover 100% of cost for these services. You keep your current setup and add a powerful new revenue stream with zero investment.",
+    title: "Almost No Cost to You",
+    description: "For just $39, RevUp is almost no cost to you. Our member support services are exemplary and we cover the cost of these services. You keep your current setup and add a powerful new revenue stream — with almost no cost to you.",
   },
   {
     iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/realtor-icon-2.gif",
@@ -58,20 +58,20 @@ const BENEFITS = [
 ];
 
 const STEPS = [
-  { step: "1", title: "Sign Up for Free", description: "Joining RevUp costs you absolutely nothing. We invest about $2,000 in every new member's training, licensing, and marketing." },
+  { step: "1", title: "Sign Up for Just $39", description: "Joining RevUp is just $39 — almost no cost to you. In fact, we invest about $2,000 in every new member's training, licensing, and marketing." },
   { step: "2", title: "Complete Quick Training", description: "Our specialized workflow limits your time on each transaction to just 20 minutes or less. One-time training and testing gets you started." },
   { step: "3", title: "Start Earning Revenue", description: "Earn transactional revenue on every deal, plus passive monthly revenue from your downline of sponsored members. No limits." },
 ];
 
 const FAQS = [
-  { q: "Does the RevUp program require any financial investment from me?", a: "No, RevUp costs you nothing and all costs associated with your RevUp membership are absorbed by us." },
+  { q: "Does the RevUp program require any financial investment from me?", a: "RevUp is just $39 — almost no cost to you. Nearly all costs associated with your RevUp membership are absorbed by us." },
   { q: "How much of my time will RevUp take up?", a: "We designed a specialized workflow that limits your time on each transaction to just 20 minutes or less. There is a one-time upfront investment of some time required to complete our training and testing program." },
   { q: "What mortgage programs can RevUp members offer their clients?", a: "RevUp's parent company Homesite Mortgage is a nationally approved FHA, VA, and USDA lender. We also offer all Fannie Mae and Freddie Mac programs, plus a zero-down FHA program, a portfolio Bridge Loan, and various DPA programs." },
   { q: "What types of revenue opportunities does RevUp offer?", a: "RevUp offers both transactional revenue and passive revenue from your downline of sponsored members." },
   { q: "Is RevUp compliant with all mortgage and real estate regulations?", a: "Yes, RevUp uses a proprietary and custom-designed software to document our member's activities so we remain compliant with RESPA and HUD." },
   { q: "Are you a mortgage lender or a mortgage broker?", a: "We are a mortgage lender. We underwrite and fund our own loans and close them in our name. Brokers cannot underwrite, fund, or close loans in their names." },
   { q: "What states does Homesite Mortgage operate in?", a: "We currently operate in Michigan, Florida, Illinois, and Missouri. We are expanding into other states and plan to offer our services nationally by the end of 2026." },
-  { q: "Does it cost anything to join RevUp?", a: "Joining RevUp costs you absolutely nothing! In fact, we invest about $2,000 for every new member's training, licensing, and marketing costs." },
+  { q: "Does it cost anything to join RevUp?", a: "Joining RevUp is just $39 — almost no cost to you. In fact, we invest about $2,000 for every new member's training, licensing, and marketing costs." },
 ];
 
 function DualCTA() {
@@ -179,7 +179,7 @@ export default function Home() {
             <Reveal>
               <div>
                 <div className="inline-block bg-white/80 text-primary font-semibold text-sm px-4 py-1.5 rounded-full mb-6 shadow-sm border border-primary/10">
-                  100% Free for Qualified Real Estate Professionals
+                  Just $39 — Almost No Cost to Qualified Real Estate Professionals
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading text-primary-dark leading-[1.1] tracking-tight">
                   Start Earning Turnkey{" "}
@@ -217,7 +217,7 @@ export default function Home() {
         <section className="bg-gradient-to-r from-primary via-primary-dark to-primary py-8">
           <Reveal>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
-              {["Free Training & Licensing", "Zero Overhead", "Compliant & Turn-Key", "Passive Revenue Monthly"].map((s) => (
+              {["Training & Licensing Included", "Almost No Cost to You", "Compliant & Turn-Key", "Passive Revenue Monthly"].map((s) => (
                 <div key={s} className="font-heading text-lg md:text-xl">{s}</div>
               ))}
             </div>
