@@ -48,6 +48,8 @@ function validateEmail(email: string): string | null {
 
 const CALENDLY_URL = "https://calendly.com/dsanders-homesitedirect/revup-15-min-demo-mg-ds";
 const THANK_YOU_URL = "/thank-you";
+const SUBMIT_ERROR_MESSAGE =
+  "Something went wrong sending your request. Please try again, or call us at 888.853.8679.";
 
 // Read utm_campaign from URL (or sessionStorage fallback)
 function getUtmCampaign(): string {
@@ -77,6 +79,7 @@ export default function LeadForm({ id }: LeadFormProps) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   // Synchronous lock — React setState is async, so 5 rapid clicks in the
   // same tick all see `submitting === false` until rerender. useRef gives
   // us a same-tick guard so only the first click runs the submission.
@@ -105,6 +108,7 @@ export default function LeadForm({ id }: LeadFormProps) {
     }
 
     setErrors({});
+    setSubmitError(null);
     setSubmitting(true);
 
     // Qualified leads book a demo (Calendly); everyone else (a "No" to either
@@ -114,7 +118,7 @@ export default function LeadForm({ id }: LeadFormProps) {
 
     try {
       const utmCampaign = getUtmCampaign();
-      await submitLead({
+      const res = await submitLead({
         firstName: firstName.trim(),
         lastName: lastName.trim(),
         email: email.trim(),
@@ -123,6 +127,10 @@ export default function LeadForm({ id }: LeadFormProps) {
         fullTimeAgent: fullTime,
         ...(utmCampaign ? { utm_campaign: utmCampaign } : {}),
       });
+      // A 2xx whose body is not {ok:true} is still a dropped lead.
+      if (res?.ok !== true) {
+        throw new Error("Submission not confirmed by server.");
+      }
       setSubmitted(true);
       // Redirect after short delay
       setTimeout(() => {
@@ -130,11 +138,9 @@ export default function LeadForm({ id }: LeadFormProps) {
       }, 1500);
     } catch (err) {
       console.error("Form submission error:", err);
-      setSubmitted(true);
-      setTimeout(() => {
-        window.location.href = redirectUrl;
-      }, 1500);
+      setSubmitError(SUBMIT_ERROR_MESSAGE);
     } finally {
+      lockRef.current = false;
       setSubmitting(false);
     }
   };
@@ -262,6 +268,16 @@ export default function LeadForm({ id }: LeadFormProps) {
         </div>
         {errors.fullTime && <p className="text-red-400 text-xs mt-1">{errors.fullTime}</p>}
       </div>
+
+      {submitError && (
+        <p
+          role="alert"
+          aria-live="polite"
+          className="rounded-lg border border-red-400/50 bg-red-950/40 px-3.5 py-2.5 text-sm font-medium text-red-100"
+        >
+          {submitError}
+        </p>
+      )}
 
       <button
         type="button" disabled={submitting || submitted} onClick={handleSubmit}

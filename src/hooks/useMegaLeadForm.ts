@@ -149,6 +149,9 @@ export function useMegaLeadForm() {
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
     const result = await response.json();
+    if (!result || result.ok !== true) {
+      throw new Error(`Submission rejected: ${JSON.stringify(result)?.slice(0, 200)}`);
+    }
 
     // MANDATORY: Explicit MegaTag trackEvent for React form submissions
     try {
