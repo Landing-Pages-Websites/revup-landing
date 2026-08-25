@@ -49,7 +49,7 @@ function validateEmail(email: string): string | null {
 const CALENDLY_URL = "https://calendly.com/dsanders-homesitedirect/revup-15-min-demo-mg-ds";
 const THANK_YOU_URL = "/thank-you";
 const SUBMIT_ERROR_MESSAGE =
-  "Something went wrong sending your request. Please try again, or call us at 888.853.8679.";
+  "Something went wrong sending your request. Please try again, or call us at 313.710.4877.";
 
 // Read utm_campaign from URL (or sessionStorage fallback)
 function getUtmCampaign(): string {

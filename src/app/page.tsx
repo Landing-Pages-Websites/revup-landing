@@ -8,8 +8,8 @@ import TiltCard from "@/components/TiltCard";
 import LogoTicker from "@/components/LogoTicker";
 import { useState } from "react";
 
-const PHONE = "8888538679";
-const PHONE_DISPLAY = "888.853.8679";
+const PHONE = "3137104877";
+const PHONE_DISPLAY = "313.710.4877";
 
 const VIDEOS = [
   { src: "https://revup-team.com/wp-content/uploads/2025/06/HM-VYD-1-APPROVED-FINAL.mp4", title: "How RevUp Works" },
