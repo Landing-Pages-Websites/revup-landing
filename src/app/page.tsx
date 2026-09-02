@@ -18,39 +18,39 @@ const VIDEOS = [
 ];
 
 const PARTNER_LOGOS = [
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/0a10cb65e9e021fb07a2c2f1b3f408df615b0a9d.png", alt: "Partner brokerage" },
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/2fa4c24c4e1457f7da6dde7fe7a6a2f272e2b101.png", alt: "Partner brokerage" },
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/4eb478ad7242ce93e33ccf7d7c98b9b887203137.png", alt: "Partner brokerage" },
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/5c76e9a3424691837dc8c5eed8f58b6deb9912c1.png", alt: "Partner brokerage" },
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/70832ab21e9daa95b100e7067e5fa767c91af6f0.png", alt: "Partner brokerage" },
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/bd9ed1c79c60bdf76c4d4c94992f16aafbf7baa7.png", alt: "Partner brokerage" },
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/logo-bhhs-300x300.gif", alt: "Berkshire Hathaway" },
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/logo-real-state-300x300.gif", alt: "Real estate partner" },
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/e044a4725cabc9be8b649c20bda3bd0a34c22e03-300x212.png", alt: "Partner brokerage" },
+  { src: "/assets/revup/0a10cb65e9e021fb07a2c2f1b3f408df615b0a9d.png", alt: "Partner brokerage" },
+  { src: "/assets/revup/2fa4c24c4e1457f7da6dde7fe7a6a2f272e2b101.png", alt: "Partner brokerage" },
+  { src: "/assets/revup/4eb478ad7242ce93e33ccf7d7c98b9b887203137.png", alt: "Partner brokerage" },
+  { src: "/assets/revup/5c76e9a3424691837dc8c5eed8f58b6deb9912c1.png", alt: "Partner brokerage" },
+  { src: "/assets/revup/70832ab21e9daa95b100e7067e5fa767c91af6f0.png", alt: "Partner brokerage" },
+  { src: "/assets/revup/bd9ed1c79c60bdf76c4d4c94992f16aafbf7baa7.png", alt: "Partner brokerage" },
+  { src: "/assets/revup/logo-bhhs-300x300.gif", alt: "Berkshire Hathaway" },
+  { src: "/assets/revup/logo-real-state-300x300.gif", alt: "Real estate partner" },
+  { src: "/assets/revup/e044a4725cabc9be8b649c20bda3bd0a34c22e03-300x212.png", alt: "Partner brokerage" },
 ];
 
 const GOVERNMENT_LOGOS = [
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/380ba4b72487fc2f3879f2579652e361ad2e45d9.png", alt: "FHA Approved", name: "FHA" },
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/d5ca1c73852f21fedfa6e291b1d6f1ec855b2539.png", alt: "VA Approved", name: "VA" },
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/fbd5277a2c9e78b0a2d08854b2d1ea0935f6b78a-2.png", alt: "USDA Approved", name: "USDA" },
-  { src: "https://revup-team.com/wp-content/uploads/2025/05/70ecffd9e598ef8fd0f37605a4b3f05a8ff10a7d-scaled.png", alt: "Fannie Mae & Freddie Mac", name: "Fannie Mae / Freddie Mac" },
+  { src: "/assets/revup/380ba4b72487fc2f3879f2579652e361ad2e45d9.png", alt: "FHA Approved", name: "FHA" },
+  { src: "/assets/revup/d5ca1c73852f21fedfa6e291b1d6f1ec855b2539.png", alt: "VA Approved", name: "VA" },
+  { src: "/assets/revup/fbd5277a2c9e78b0a2d08854b2d1ea0935f6b78a-2.png", alt: "USDA Approved", name: "USDA" },
+  { src: "/assets/revup/70ecffd9e598ef8fd0f37605a4b3f05a8ff10a7d-scaled.png", alt: "Fannie Mae & Freddie Mac", name: "Fannie Mae / Freddie Mac" },
 ];
 
 const BENEFITS = [
   {
-    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/realtors-icon-01.gif",
+    iconPurple: "/assets/revup/realtors-icon-01.gif",
     iconWhite: "https://revup-team.com/wp-content/uploads/2025/05/icon-repair-white.png",
     title: "Almost No Cost to You",
     description: "For just $39, RevUp is almost no cost to you. Our member support services are exemplary and we cover the cost of these services. You keep your current setup and add a powerful new revenue stream — with almost no cost to you.",
   },
   {
-    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/realtor-icon-2.gif",
+    iconPurple: "/assets/revup/realtor-icon-2.gif",
     iconWhite: "https://revup-team.com/wp-content/uploads/2025/05/icon-timer-white.png",
     title: "Focus on Your Core Business",
     description: "RevUp is designed to take you just minutes of your time on every transaction, yet be compensated at the maximum level! Stay focused on selling homes while we completely manage your mortgage pipeline.",
   },
   {
-    iconPurple: "https://revup-team.com/wp-content/uploads/2025/05/realtor-icon-3.gif",
+    iconPurple: "/assets/revup/realtor-icon-3.gif",
     iconWhite: "https://revup-team.com/wp-content/uploads/2025/05/icon-heart-white.png",
     title: "Improve Your Customer's Experience",
     description: "Your customers trust you more than anybody. Streamline their home shopping process and provide below-market financing to elevate their experience and generate more referrals for your business!",
@@ -139,7 +139,7 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
           <Image
-            src="https://revup-team.com/wp-content/uploads/2025/05/RevUp-Full-Color-scaled.png"
+            src="/assets/revup/RevUp-Full-Color-scaled.png"
             alt="RevUp" width={160} height={56} className="h-14 w-auto" unoptimized
           />
           <div className="flex items-center gap-3">
@@ -201,7 +201,7 @@ export default function Home() {
                 </div>
                 <div className="mt-10 rounded-2xl overflow-hidden shadow-lg hidden lg:block">
                   <Image
-                    src="https://revup-team.com/wp-content/uploads/2025/05/realtosr-image.jpg"
+                    src="/assets/revup/realtosr-image.jpg"
                     alt="Real estate agent handing keys to happy client" width={614} height={500} className="w-full object-cover" unoptimized
                   />
                 </div>
@@ -427,7 +427,7 @@ export default function Home() {
                   </div>
                   <div className="mt-10 rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src="https://revup-team.com/wp-content/uploads/2025/05/about-workers.jpg"
+                      src="/assets/revup/about-workers.jpg"
                       alt="RevUp team at work" width={612} height={450}
                       className="w-full object-cover" unoptimized
                     />
@@ -448,7 +448,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <Image
-              src="https://revup-team.com/wp-content/uploads/2025/05/RevUp-Full-Color-White-scaled.jpg"
+              src="/assets/revup/RevUp-Full-Color-White-scaled.jpg"
               alt="RevUp" width={140} height={40} className="h-10 w-auto" unoptimized
             />
           </div>
