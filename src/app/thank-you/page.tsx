@@ -16,7 +16,7 @@ export default function ThankYouPage(): React.ReactElement {
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center px-6 py-20 text-center">
         <Image
-          src="https://revup-team.com/wp-content/uploads/2025/05/RevUp-Full-Color-scaled.png"
+          src="/assets/revup/RevUp-Full-Color-scaled.png"
           alt="RevUp" width={160} height={56} className="h-12 w-auto mb-10" unoptimized
         />
 
