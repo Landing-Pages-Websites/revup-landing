@@ -179,17 +179,18 @@ export default function Home() {
             <Reveal>
               <div>
                 <div className="inline-block bg-white/80 text-primary font-semibold text-sm px-4 py-1.5 rounded-full mb-6 shadow-sm border border-primary/10">
-                  Just $39 — Almost No Cost to Qualified Real Estate Professionals
+                  Free Training & Licensing for Qualified Real Estate Agents
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading text-primary-dark leading-[1.1] tracking-tight">
-                  Start Earning Turnkey{" "}
+                  Add{" "}
                   <span className="relative">
-                    <span className="relative z-10 animate-shimmer">Mortgage Revenue</span>
+                    <span className="relative z-10 animate-shimmer">Mortgage Rev Share</span>
                     <span className="absolute bottom-1 left-0 w-full h-3 bg-accent/30 -z-0" />
-                  </span>
+                  </span>{" "}
+                  to Your Real Estate Business
                 </h1>
                 <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
-                  Earn up to $4000 per transaction in just 10 minutes.
+                  Qualified real estate agents can add mortgage rev share to their business with Free Training & Licensing.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
                   <a href="#contact" className="rounded-full bg-accent px-8 py-3.5 text-white font-semibold hover:bg-accent/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 animate-pulse-glow">
